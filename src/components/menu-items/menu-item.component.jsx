@@ -4,7 +4,6 @@ import { useNavigate } from "react-router-dom";
 
 const MenuItem = ({ title, imageUrl, size }) => {
   let navigate = useNavigate();
-  console.log(navigate.path);
   return (
     <div className={`${size} menu-item`} onClick={() => navigate(`${title}`)}>
       <div
