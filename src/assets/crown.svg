@@ -9,7 +9,7 @@
                 <polygon id="Rectangle" fill="#013351" points="3 14 25 26.5 47 14 40.855176 39 9.08421785 39"></polygon>
                 <polygon id="Triangle" fill-opacity="0.4" fill="#0A4473" points="25 8 40 39 10 39"></polygon>
                 <circle id="Oval" fill="#E0AC3E" cx="2" cy="9" r="2"></circle>
-                <circle id="Oval" fill="#3D0E0F" cx="25" cy="2" r="2"></circle>
+                <circle id="Oval" fill="#3D0E0F" cx="25" cy="2" r="2.5"></circle>
                 <circle id="Oval" fill="#E0AC3E" cx="48" cy="9" r="2"></circle>
             </g>
         </g>
