@@ -1,14 +1,9 @@
 import firebase from "firebase/compat/app";
 import "firebase/compat/firestore";
 import "firebase/compat/auth";
-// Import the functions you need from the SDKs you need
-import { initializeApp } from "firebase/app";
-//import { getAnalytics } from "firebase/analytics";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
-// Your web app's Firebase configuration
-// For Firebase JS SDK v7.20.0 and later, measurementId is optional
+import { initializeApp } from "firebase/app";
+import { getAnalytics } from "firebase/analytics";
 const firebaseConfig = {
   apiKey: "AIzaSyDKHeitCvqb80Urnm6Hf69wiu_qv3kbWW0",
   authDomain: "clothingshop-95825.firebaseapp.com",
@@ -22,7 +17,6 @@ const firebaseConfig = {
 // Initialize Firebase
 //const app = initializeApp(firebaseConfig);
 //const analytics = getAnalytics(app);
-const config = "tbd";
 
 firebase.initializeApp(firebaseConfig);
 
@@ -33,13 +27,10 @@ const provider = new firebase.auth.GoogleAuthProvider();
 provider.setCustomParameters({ prompt: "select_account" });
 export const signInWithGoogle = () => auth.signInWithPopup(provider);
 
-export const createUserProfileDocument = async (userAuth) => {
+export const createUserProfileDocument = async (userAuth, additionalData) => {
   if (!userAuth) return;
-
   const userRef = firestore.doc(`users/${userAuth.uid}`);
-
   const snapShot = await userRef.get();
-
   if (!snapShot.exists) {
     const { displayName, email } = userAuth;
     const createdAt = new Date();
@@ -53,7 +44,6 @@ export const createUserProfileDocument = async (userAuth) => {
       console.log("error creating user", error.message);
     }
   }
-
   return userRef;
 };
 
