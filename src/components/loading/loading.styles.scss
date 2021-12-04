@@ -1,0 +1,35 @@
+.loading_div {
+  justify-content: center;
+  display: flex;
+  padding-top: 30px;
+
+  .loading_img {
+    height: 150px;
+    width: 150px;
+    animation: rotation 0.8s infinite 0s ease-out alternate;
+  }
+}
+
+@keyframes rotation {
+  0% {
+    transform: rotate(-20deg) scale(1, 1);
+    background-color: red;
+    border-radius: 100%;
+    background-opacity: 0.5;
+  }
+  50% {
+    transform: rotate(20deg) scale(1.2,1.1) ;
+    background-color: orange;
+    background-opacity: 0.5;
+  }
+  100% {
+    transform: rotate(-20deg) scale(1.2,1.1) ;
+    background-color: violet;
+    background-opacity: 0.5;
+  }
+  // 100% {
+  //   transform: rotate(0deg) scale(1, 1);
+  //   transform: scale(.3);
+  //   background-color: yellow;
+  // }
+}

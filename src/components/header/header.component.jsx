@@ -1,11 +1,11 @@
 import "./header.styles.scss";
-
+import React from "react";
 import { useSelector } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
 
-const Header = () => {
+let Header = () => {
   const navigate = useNavigate();
   const SignOutUser = () => {
     auth.signOut();
@@ -14,14 +14,19 @@ const Header = () => {
   let user = useSelector((state) => state.user);
   return (
     <div className="header">
-      <Link className="ui button red" to="/">
-        <Logo className="logo" />
-      </Link>
+      <div className="logo-welcome">
+        <Link className="logo-link" to="/">
+          <Logo className="logo" />
+        </Link>
+        {user.currentUser ? (
+          <h3>Welcome {user.currentUser.displayName} </h3>
+        ) : null}
+      </div>
       <div className="options">
-        <Link className="option ui button red" to="/shop">
+        <Link className="option" to="/shop">
           SHOP
         </Link>
-        <Link className="option ui button red" to="/shop">
+        <Link className="option" to="/shop">
           CONTACT
         </Link>
         {user.currentUser ? (
@@ -38,4 +43,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header = React.memo(Header);

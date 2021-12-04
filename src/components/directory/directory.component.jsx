@@ -43,8 +43,14 @@ class Directory extends React.Component {
     };
   }
   render() {
+    const nemuItems = () => {
+      this.state.sections.map(({ id, ...otherSectionProps }) => (
+        <MenuItem key={id} {...otherSectionProps} />
+      ));
+    };
     return (
       <div className="directory-menu">
+        {nemuItems}
         {this.state.sections.map(({ id, ...otherSectionProps }) => (
           <MenuItem key={id} {...otherSectionProps} />
         ))}
@@ -52,5 +58,4 @@ class Directory extends React.Component {
     );
   }
 }
-
-export default Directory;
+export default Directory = React.memo(Directory);
