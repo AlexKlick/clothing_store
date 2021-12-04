@@ -1,11 +1,17 @@
 import "./header.styles.scss";
 
-import { connect } from "react-redux";
-import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
+import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import { auth } from "../../firebase/firebase.utils";
 
-const Header = ({ currentUser }) => {
+const Header = () => {
+  const navigate = useNavigate();
+  const SignOutUser = () => {
+    auth.signOut();
+    navigate("/");
+  };
+  let user = useSelector((state) => state.user);
   return (
     <div className="header">
       <Link className="ui button red" to="/">
@@ -18,8 +24,8 @@ const Header = ({ currentUser }) => {
         <Link className="option ui button red" to="/shop">
           CONTACT
         </Link>
-        {currentUser ? (
-          <div className="option" onClick={() => auth.signOut()}>
+        {user.currentUser ? (
+          <div className="option" onClick={() => SignOutUser()}>
             Sign Out
           </div>
         ) : (
@@ -32,8 +38,4 @@ const Header = ({ currentUser }) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  currentUser: state.user.currentUser,
-});
-
-export default connect(mapStateToProps)(Header);
+export default Header;

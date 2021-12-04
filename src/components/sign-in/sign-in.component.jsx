@@ -1,10 +1,11 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
+import { connect } from "react-redux";
 import FormInput from "../form-input/form-input.component";
 import CustomButton from "../custom-button/custom-button.component";
 import "./sign-in.styles.scss";
 import { signInWithGoogle } from "../../firebase/firebase.utils";
 
-const SignIn = () => {
+const SignIn = ({ currentUser }) => {
   const [signInState, setSignInState] = useState({
     email: "",
     password: "",
@@ -16,7 +17,6 @@ const SignIn = () => {
     const { value, name } = e.target;
     setSignInState({ ...signInState, [name]: value });
   };
-  useEffect(() => {});
   return (
     <div className="sign-in">
       <h2>I already have an account</h2>
@@ -51,4 +51,8 @@ const SignIn = () => {
   );
 };
 
-export default SignIn;
+const mapStateToProps = (state) => ({
+  currentUser: state.user.currentUser,
+});
+
+export default connect(mapStateToProps)(SignIn);
