@@ -12,6 +12,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector, useStore } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 let App = () => {
+  const store = useStore();
   const [currentUser, setcurrentUser] = useState();
   const [loading, setLoading] = useState(true);
   let unsubscribeFromAuth = () => null;
@@ -36,6 +37,9 @@ let App = () => {
   useEffect(() => {
     dispatch(setCurrentUser(currentUser));
   }, [dispatch]);
+  // useEffect(() => {
+  //   setLoading(false);
+  // }, [currentUser]);
   return (
     <BrowserRouter>
       <Header />
@@ -43,21 +47,7 @@ let App = () => {
         <Loading />
       ) : (
         <Routes>
-          <Route
-            exact
-            path="/"
-            element={
-              currentUser ? (
-                <Homepage />
-              ) : (
-                <>
-                  {" "}
-                  <SignInSignUp />
-                  <Navigate to="/signin" />
-                </>
-              )
-            }
-          />
+          <Route exact path="/" element={<Homepage />} />
           <Route
             exact
             path="/signin"
@@ -72,26 +62,11 @@ let App = () => {
               )
             }
           />
-          <Route
-            path="/shop"
-            element={
-              currentUser ? (
-                <>
-                  <ShopPage />
-                  <Navigate to="/" />
-                </>
-              ) : (
-                <>
-                  <SignInSignUp />
-                  <Navigate to="/signin" />
-                </>
-              )
-            }
-          />
+          <Route path="/shop" element={<ShopPage />} />
         </Routes>
       )}
     </BrowserRouter>
   );
 };
 
-export default App = React.memo(App);
+export default App;
