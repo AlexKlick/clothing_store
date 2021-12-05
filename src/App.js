@@ -6,14 +6,14 @@ import SignInSignUp from "./pages/sign-in-sign-up/sign-in-sign-up.component";
 import Loading from "./components/loading/loading.component";
 
 import { auth, createUserProfileDocument } from "./firebase/firebase.utils";
-import { BrowserRouter, Route, useNavigate, Navigate } from "react-router-dom";
+import { BrowserRouter, Route, Navigate } from "react-router-dom";
 import { Routes } from "react-router";
 import React, { useEffect, useState } from "react";
-import { useDispatch, useSelector, useStore } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
 let App = () => {
-  const store = useStore();
-  const [currentUser, setcurrentUser] = useState();
+  const user = useSelector((state) => state.user);
+  const [currentUser, setcurrentUser] = useState(user);
   const [loading, setLoading] = useState(true);
   let unsubscribeFromAuth = () => null;
   const dispatch = useDispatch();

@@ -1,11 +1,14 @@
 import "./header.styles.scss";
-import React from "react";
-import { useSelector } from "react-redux";
+import React, { useEffect, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+import CartDropdown from "../cart-dropdown/cart-dropdown.component";
+import CartIcon from "../cart-icon/cart-icon.component";
 import { auth } from "../../firebase/firebase.utils";
-
+import { useDispatch, useSelector } from "react-redux";
+import { toggleCart } from "../../redux/cart/cart.actions";
 let Header = () => {
+  const toggle = useSelector((state) => state.toggleCart.hidden);
   const navigate = useNavigate();
   const SignOutUser = () => {
     auth.signOut();
@@ -38,7 +41,9 @@ let Header = () => {
             Sign In
           </Link>
         )}
+        <CartIcon />
       </div>
+      {toggle ? null : <CartDropdown />}
     </div>
   );
 };
