@@ -3,7 +3,7 @@
 ### Tech Used
 | Framework / Languages       | Testing / Debugging         | Methodology     | Other Gems            |
 |-----------------------------|-----------------------------|-----------------|-----------------------|
-| ![RubyOnRails][rails-badge] | ![][react-badge]            | ![][git-badge]  | ![][factorybot-badge] |
+| ![][react-badge]            |                             | ![][git-badge]  | ![][factorybot-badge] |
 | ![][ruby-badge]             | ![][vcr-badge]              | ![][agile]      | ![][faker-badge]      |
 | ![][postgresql-badge]       | ![][webmock-badge]          | ![][rest-badge] | ![][faraday-badge]    |
 | ![][active-record-badge]    | ![][capybara-badge]         | ![][tdd-badge]  |                       |
