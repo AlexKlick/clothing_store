@@ -34,4 +34,4 @@
 [tdd-badge]: https://img.shields.io/badge/TDD-345d3c.svg?&style=plastic&logo=TDD&logoColor=white
 [rest-badge]: https://img.shields.io/badge/REST-345d3c.svg?&style=plastic&logo=REST&logoColor=white
 
-[test]: https://img.shields.io/badge/Agile%20Process-blue.svg?logo=data:image/pnghttps://neo4j.com/wp-content/themes/neo4jweb/template-partials/brand/assets/neo4j-icon-color.png
+[test]: https://img.shields.io/badge/Agile%20Process-blue.png?logo=data:image/png;base64,https://neo4j.com/wp-content/themes/neo4jweb/template-partials/brand/assets/neo4j-icon-color.png
