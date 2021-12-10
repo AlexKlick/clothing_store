@@ -11,6 +11,7 @@ import { Routes } from "react-router";
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { setCurrentUser } from "./redux/user/user.actions";
+
 let App = () => {
   const user = useSelector((state) => state.user);
   const [currentUser, setcurrentUser] = useState(user);
@@ -37,9 +38,7 @@ let App = () => {
   useEffect(() => {
     dispatch(setCurrentUser(currentUser));
   }, [dispatch]);
-  // useEffect(() => {
-  //   setLoading(false);
-  // }, [currentUser]);
+
   return (
     <BrowserRouter>
       <Header />

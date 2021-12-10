@@ -1,5 +1,6 @@
 import "./loading.styles.scss";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
+
 const Loading = () => {
   return (
     <div className="loading_div">

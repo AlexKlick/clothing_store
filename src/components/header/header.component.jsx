@@ -7,6 +7,7 @@ import CartIcon from "../cart-icon/cart-icon.component";
 import { auth } from "../../firebase/firebase.utils";
 import { useDispatch, useSelector } from "react-redux";
 import { toggleCart } from "../../redux/cart/cart.actions";
+
 let Header = () => {
   const toggle = useSelector((state) => state.toggleCart.hidden);
   const navigate = useNavigate();
