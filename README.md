@@ -17,15 +17,6 @@
 ### Processes
 ![][agile]
 ![][tdd-badge] 
-| Framework / Languages       | Testing / Debugging         | Methodology     | Other Gems            |
-|-----------------------------|-----------------------------|-----------------|-----------------------|
-| ![][react-badge]            |                             | ![][git-badge]  | ![][factorybot-badge] |
-| ![][ruby-badge]             | ![][vcr-badge]              | ![][agile]      | ![][faker-badge]      |
-| ![][postgresql-badge]       | ![][webmock-badge]          | ![][rest-badge] | ![][faraday-badge]    |
-| ![][active-record-badge]    | ![][capybara-badge]         | ![][tdd-badge]  |                       |
-|      ![][test]                       | ![][shoulda-matchers-badge] |                 |                       |
-|                             | ![][simplecov-badge]        |                 |                       |
-|                             | ![][pry-badge]              |                 |                       |
 
 
 
