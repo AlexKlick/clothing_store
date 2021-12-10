@@ -20,8 +20,8 @@
 
 
 
-[Jest]: (https://img.shields.io/badge/-jest-%23C21325?style=plastic&logo=jest&logoColor=white)
-[Firebase]: (https://img.shields.io/badge/firebase-%23039BE5.svg?style=plastic&logo=firebase)
+![Jest](https://img.shields.io/badge/-jest-%23C21325?style=plastic&logo=jest&logoColor=white)
+[Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=plastic&logo=firebase)
 [git-badge]: https://img.shields.io/badge/git-345d3c.svg?&style=plastic&logo=git&logoColor=white
 [react-badge]: https://img.shields.io/badge/React-345d3c.svg?&style=plastic&logo=react&logoColor=turquoise&color=404040
 [postgresql-badge]: https://img.shields.io/badge/PostgreSQL-345d3c.svg?&style=plastic&logo=postgresql&logoColor=white
