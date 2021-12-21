@@ -1,7 +1,6 @@
 {
   "name": "clothing-store",
   "version": "0.1.0",
-  "homepage": "https://alexklick.github.io/clothing-store/",
   "private": true,
   "dependencies": {
     "@babel/core": "^7.16.0",

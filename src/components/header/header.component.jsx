@@ -1,21 +1,20 @@
 import "./header.styles.scss";
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { ReactComponent as Logo } from "../../assets/crown.svg";
 import CartDropdown from "../cart-dropdown/cart-dropdown.component";
 import CartIcon from "../cart-icon/cart-icon.component";
 import { auth } from "../../firebase/firebase.utils";
-import { useDispatch, useSelector } from "react-redux";
-import { toggleCart } from "../../redux/cart/cart.actions";
+import { useSelector } from "react-redux";
 
 let Header = () => {
   const toggle = useSelector((state) => state.toggleCart.hidden);
+  let user = useSelector((state) => state.user);
   const navigate = useNavigate();
   const SignOutUser = () => {
     auth.signOut();
     navigate("/");
   };
-  let user = useSelector((state) => state.user);
   return (
     <div className="header">
       <div className="logo-welcome">
