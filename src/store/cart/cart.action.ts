@@ -26,6 +26,14 @@ const addCartItem = (
   return [...cartItems, { ...productToAdd, quantity: 1 }];
 };
 
+export const addItemToCart = (
+  cartItems: CartItem[],
+  productToAdd: CategoryItem
+) => {
+  const newCartItems = addCartItem(cartItems, productToAdd);
+  return setCartItems(newCartItems);
+};
+
 const removeCartItem = (
   cartItems: CartItem[],
   cartItemToRemove: CartItem
@@ -74,13 +82,6 @@ export const setCartItems = withMatcher(
     createAction(CART_ACTION_TYPES.SET_CART_ITEMS, cartItems)
 );
 
-export const addItemToCart = (
-  cartItems: CartItem[],
-  productToAdd: CategoryItem
-) => {
-  const newCartItems = addCartItem(cartItems, productToAdd);
-  return setCartItems(newCartItems);
-};
 
 export const removeItemFromCart = (
   cartItems: CartItem[],
