@@ -1,7 +1,8 @@
 import React from "react";
 import MenuItems from "../menu-items/menu-items.component";
 import "./directory.styles.scss";
-
+import VisXCurve from "../LineChart.tsx";
+const margin = { left: 25, right: 25, top: 20, bottom: 50 };
 let Directory = () => {
   const data = {
     sections: [
@@ -43,6 +44,7 @@ let Directory = () => {
   return (
     <div className="directory-menu">
       <MenuItems props={data.sections} />
+      <VisXCurve width={800} height={500} margin={margin} />
     </div>
   );
 };

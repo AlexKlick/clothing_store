@@ -1,8 +1,8 @@
 import React from "react";
 import MenuItem from "../menu-items/menu-item.component";
 
-let MenuItems = (props) => {
-  return props.props.map(({ id, ...otherSectionProps }) => (
+let MenuItems = (item) => {
+  return item.props.map(({ id, ...otherSectionProps }) => (
     <MenuItem key={id} {...otherSectionProps} />
   ));
 };

@@ -8,7 +8,6 @@ let CartDropdown = () => {
   const [toggleState, settoggleState] = useState();
   const toggle = useSelector((state) => state.toggleCart.hidden);
   const dispatch = useDispatch();
-  useEffect(() => {});
   return (
     <>
       {toggle ? null : (
